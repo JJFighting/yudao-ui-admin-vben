@@ -124,6 +124,34 @@ const coreRoutes: RouteRecordRaw[] = [
     name: 'BpmMobileFormPreview',
     path: '/bpm/mobile/form-preview',
   },
+  /**
+   * 分享独立页面（无 BasicLayout 包裹，基于 Google 登录）
+   * 通过 ?type=lottery|task 参数区分不同活动类型
+   */
+  {
+    component: () => import('#/views/growth/share/index.vue'),
+    meta: {
+      hideInBreadcrumb: true,
+      hideInMenu: true,
+      hideInTab: true,
+      ignoreAccess: true,
+      title: '分享活动',
+    },
+    name: 'GrowthShare',
+    path: '/share',
+  },
+  {
+    component: () => import('#/views/growth/share/index.vue'),
+    meta: {
+      hideInBreadcrumb: true,
+      hideInMenu: true,
+      hideInTab: true,
+      ignoreAccess: true,
+      title: 'OAuth Callback',
+    },
+    name: 'GrowthOAuthCallback',
+    path: '/share/oauth/callback',
+  },
 ];
 
 export { coreRoutes, fallbackNotFoundRoute };
